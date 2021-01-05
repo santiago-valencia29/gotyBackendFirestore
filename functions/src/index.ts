@@ -1,4 +1,10 @@
 import * as functions from "firebase-functions";
+import * as admin from "firebase-admin";
+
+var serviceAccount = require("./serviceAccountkey.json");
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+});
 
 // // Start writing Firebase Functions
 // // https://firebase.google.com/docs/functions/typescript
